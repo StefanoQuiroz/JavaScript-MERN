@@ -19,7 +19,7 @@ while( primeCount < 1e4 ) {
     num++;
 }
 console.log(`The 10,000th prime number is ${num-1}`);
-console.log(`This took ${performance.now() - start} milliseconds to run`);
+console.log(`This took ${(performance.now() - start)/1000} milliseconds to run`);
 /*
 
 const { performance } = require('perf_hooks');
