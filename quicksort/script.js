@@ -1,3 +1,4 @@
+//Hoare partition
 const partition = (arr, left, right) =>{
     let pivot = Math.floor((left+right)/2);
     let izq=[], der=[];
@@ -9,6 +10,6 @@ const partition = (arr, left, right) =>{
     }
     return [izq, arr[pivot], der];
 }
-let array = [1,2,3,4,5,6,7,8]
+let array = [1,2,3,4,5,6,7,8,9]
 //1,2,3,  4  , 5,6,7,8
 console.log(partition(array, 0, array.length-1));
