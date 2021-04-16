@@ -25,7 +25,7 @@ class M5 extends Vehicle {
     }
     childFunction(){
         //using super, we can call the method parentFunction() class Vehicle{ }
-        // const message = super.parentFunction();
+        // const message = this.parentFunction();
         const message = super.drive();  
         console.log(`${message}`);
     }
