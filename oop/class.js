@@ -12,6 +12,7 @@ class Vehicle{
         this.color=color;
     }
     //Methods -> functions inside the class
+    //Funciones específicas de la clase
     drive(){
         this.miles += 10;
     }
@@ -20,6 +21,12 @@ class Vehicle{
 //To create a new instance we must provide the constructor with the following arguments   
 //create a new object car invoke new class Vehicle with their arguments
 const car = new Vehicle("Ford", "f-150", "black");
+console.log({car})// the entire object
+
+//destructuration
+const {manufacturer: manufacturerCar} = car;
+console.log({manufacturerCar});
+
 console.log(car.miles);//0
 car.drive(); //+=10
 //print newobject.property ---> ex: car.manufacturer
