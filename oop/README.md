@@ -4,3 +4,4 @@
 2. Class with console.table() => index, value
 3. Inherit class 1
 4. Inherit class 2
+5. Jake OOP class
