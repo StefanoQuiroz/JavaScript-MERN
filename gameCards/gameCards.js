@@ -21,15 +21,21 @@ class Unit extends Card{
         //Target must be an instance of unit card
         if(!(target instanceof Unit)) throw new Error('Solo puedes atacar a otra unidad'); 
         //throw removes me from the function!!!! always place the throw new error in front
-
+        //la resiliencia disminuye al poder del atacante
+        target.resilience -= this.power;
         //attack other units
         //reduce target res by power
     }
 }
 
-const unit1 = new Unit("Ninja Cinturon Rojo", 3, 3, 3);
-console.table(unit1);
-unit1.attack(3);
+const redBelt = new Unit("Red belt Ninja", 3, 3, 3);
+const yellowBelt = new Unit ("Yello Belt Ninja",3,3,3);
+console.log({redBelt, yellowBelt});
+redBelt.attack(yellowBelt);
+console.log({redBelt, yellowBelt});
+
+
+
 
 
 
