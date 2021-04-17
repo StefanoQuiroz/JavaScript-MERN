@@ -31,7 +31,6 @@ class Ninja{
     }
 }
 // expota funciones, objetos u otro dato primitivo dle modulo para que se utilicen en otros programas con el import.
-module.exports = Ninja;
 
 /*
 const ninja1 = new Ninja ("Hyabusa", 8);
@@ -42,3 +41,7 @@ console.log(ninja1.showStats2());
 const stats = ninja1.showStats2();
 console.log(stats);
 */
+//Si no se comenta los console.logs se imprimen en el archivo donde los requiero => const Ninja = require(./archivo.js)
+//Se coloca al último
+module.exports = Ninja;
+
