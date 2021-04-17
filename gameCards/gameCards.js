@@ -18,10 +18,25 @@ class Unit extends Card{
         this.power = power;
     }
     attack(target){
+        //Target must be an instance of unit card
+        if(!(target instanceof Unit)) throw new Error('Solo puedes atacar a otra unidad'); 
+        //throw removes me from the function!!!! always place the throw new error in front
+
         //attack other units
         //reduce target res by power
     }
 }
+
+const unit1 = new Unit("Ninja Cinturon Rojo", 3, 3, 3);
+console.table(unit1);
+unit1.attack(3);
+
+
+
+
+
+
+
 //class Effect
 class Effects extends Card{
     //Los efectos requerirán un "objetivo" cuando se juegan. Aumentan o disminuyen el poder o la resistencia de la "Unidad" a la que apuntan. Del mismo modo, las "Unidades" pueden atacar a otras "Unidades", cuando lo hacen disminuyen la "resistencia" del objetivo por el "poder" del atacante. 
