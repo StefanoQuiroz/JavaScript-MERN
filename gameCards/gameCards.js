@@ -48,6 +48,7 @@ console.table({redBelt, blackBelt})
 programacionEnPareja.played(blackBelt)
 console.table({redBelt, blackBelt})
 
-
+//Rep
+//Rep
 
 
