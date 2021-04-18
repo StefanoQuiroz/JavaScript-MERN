@@ -46,7 +46,8 @@ console.table({redBelt, blackBelt})
 redBelt.attack(blackBelt);
 console.table({redBelt, blackBelt})
 programacionEnPareja.played(blackBelt)
-console.table({redBelt, blackBelt})
+// creo una propiedad se le asigna objetos[poder]
+console.table({redBelt, blackBelt, resDeYellow: blackBelt["poder"]})
 
 //Rep
 //Rep
