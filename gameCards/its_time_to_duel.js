@@ -63,3 +63,4 @@ rechazoDePromesaNoManejado.played(ninjaRedBelt);
 programacionEnPareja.played(ninjaRedBelt);
 ninjaRedBelt.attack(ninjaBlackBelt);
 console.table({ninjaRedBelt, ninjaBlackBelt});
+//Finished own version
