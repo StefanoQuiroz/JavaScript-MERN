@@ -1,8 +1,3 @@
-//GAME CARDS
-//Cards: Unidades y Efectos
-//Unidades se jugaran para obtener el control del tablero y lucharan con las unidades jugadas por un oponente
-//Effect requiere que una unidad sea apuntada para poder jugar
-
 class Carta {
     constructor(nombre, costo){
         this.nombre=nombre;
@@ -10,7 +5,7 @@ class Carta {
     }
     //methods
 }
-//class Unit
+
 class Unidad extends Carta{
     constructor(nombre, costo, poder, resiliencia){
         super(nombre, costo);
@@ -18,48 +13,44 @@ class Unidad extends Carta{
         this.resiliencia = resiliencia;
     }
     attack(target){
-        //Target must be an instance of unit card is an other unit
         if(!(target instanceof Unidad)) throw new Error('Solo puedes atacar a otra unidad'); 
-        //throw removes me from the function!!!! always place the throw new error in front
-        //la resiliencia disminuye al poder del atacante
         target.resiliencia -= this.poder;
-        //attack other units
-        //reduce target res by power
+    }
+}
+
+class Efectos extends Carta{
+    constructor(nombre, costo, texto, stat, magnitud){
+        super(nombre, costo);
+        this.texto = texto;
+        this.stat = stat;
+        this.magnitud = magnitud;
+    }
+    played(target){
+        if(!(target instanceof Unidad)) throw new Error('Solo puedes atacar a otra unidad');
+
+        if(this.stat === 'Resiliencia'){
+            target.resiliencia+=this.magnitud;
+        }
+        if (this.stat === 'Poder'){
+            target.poder += this.magnitud;
+        }
     }
 }
 
 const redBelt = new Unidad("Ninja Cinturon Rojo", 3, 3, 4);
 const blackBelt = new Unidad ("Ninja Cinturon Negro",4,5,4);
+
+const algoritmoDíficil = new Efectos('Algoritmo Difícil', 2, 'aumentar resistencia del objetivo en 3', 'Resiliencia', 3);
+const RechazoDePromesaNoManejado = new Efectos('Rechazo de promesa no manejado', 1, 'reducir resistencia del objetivo en 3', 'Resiliencia', -2);
+const programacionEnPareja = new Efectos('Programacion en pareja', 3, 'aumentar el poder del objetivo en 2', 'Poder', 2);
 console.table({redBelt, blackBelt});
-redBelt.attack(blackBelt);
+algoritmoDíficil.played(redBelt);
 console.table({redBelt, blackBelt});
+programacionEnPareja.played(redBelt);
+console.table({redBelt, blackBelt});
+//redBelt.attack(blackBelt);
+//console.table({redBelt, blackBelt});
 
 
 
 
-
-
-
-
-
-
-//class Effect
-class Efectos extends Carta{
-    
-
-
-
-
-    //Los efectos requerirán un "objetivo" cuando se juegan. Aumentan o disminuyen el poder o la resistencia de la "Unidad" a la que apuntan. Del mismo modo, las "Unidades" pueden atacar a otras "Unidades", cuando lo hacen disminuyen la "resistencia" del objetivo por el "poder" del atacante. 
-    //( Raise/lower the targets  resilience/power by amount ) => text   Raise = Magnitude = amount   stat = resilience
-}
-
-/*
-play( target ) {
-    if( target instanceof Unit ) {
-        // implementa el texto de carta aquí
-    } else {
-        throw new Error( "Target must be a unit!" );
-    }
-}
-*/
