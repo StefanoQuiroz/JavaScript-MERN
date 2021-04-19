@@ -39,4 +39,15 @@ const pokemon = Object.freeze([
 
 //Usando la matriz de Pokémon anterior encuentre lo siguiente.
 //1. Una serie de objetos Pokémon donde la identificación es divisible por 3
+const pkmnIdDivPorTres = pokemon.filter(({id}) => !(id%3));
+console.log(pkmnIdDivPorTres);
+//2. Una serie de objetos Pokémon que son del tipo "fuego"
+const pkmnTipoFuego =  pokemon.filter(({types}) => types.includes('fire'));
+console.log(pkmnTipoFuego);
+//3. Una variedad de objetos Pokémon que tienen más de un tipo
+const pkmnMasDeUnTipo = pokemon.filter(({types}) => types.length > 1);
+console.log(pkmnMasDeUnTipo);
+//4. una matriz con solo los nombres de los Pokémon
+const pkmnNombre = pokemon.map(({name})=> name);
+console.log({pkmnNombre});
 
