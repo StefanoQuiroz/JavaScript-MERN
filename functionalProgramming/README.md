@@ -7,3 +7,5 @@
 5. sort()
 6. map()
 7. filter()
+8. Curry
+9. Clausura - Importante
