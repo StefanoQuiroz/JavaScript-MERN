@@ -50,4 +50,16 @@ console.log(pkmnMasDeUnTipo);
 //4. una matriz con solo los nombres de los Pokémon
 const pkmnNombre = pokemon.map(({name})=> name);
 console.log({pkmnNombre});
-
+//5. una matriz con solo los nombres de los Pokémon
+const pkmnIdMayor99 = pokemon.filter(({id})=> id>99).map(({name})=>name);
+console.log(pkmnIdMayor99);
+//6. una matriz con solo los nombres del pokémon cuyo único tipo es veneno
+const pkmnVeneno = pokemon.filter(({types}) => types.includes('poison')).map(({name})=> name); 
+console.log(pkmnVeneno);
+//7. una matriz que contiene solo el primer tipo de todos los Pokémon cuyo segundo tipo es "volador"
+const pkmnTipoVolador = pokemon.filter(({types})=> types[1] === 'flying').map(({types})=> types[0]);
+console.log(pkmnTipoVolador);
+//8. un recuento de la cantidad de pokémon que son de tipo "normal"
+const pkmnRecuento = pokemon.filter(({types})=> types.includes('normal')).length //para enumerarlos
+console.log(pkmnRecuento);
+//Finished
